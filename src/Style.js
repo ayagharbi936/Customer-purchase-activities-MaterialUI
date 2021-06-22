@@ -17,12 +17,23 @@ const useStyles = makeStyles((theme) => ({
     height: 15,
     width: 30,
     borderRadius: 5,
-    marginLeft: 3,
+    marginLeft: 2,
   },
   tableItemLabel: {
     fontSize: 11,
     fontWeight: 500,
     marginBottom: 10,
+  },
+  EditFormLabel: {
+    fontWeight: 500,
+    fontSize: 13,
+    marginBottom: 5,
+  },
+  input: {
+    backgroundColor: "transparent",
+    borderRadius: 4,
+    border: "1px solid #ccc",
+    outline: 0,
   },
 }));
 

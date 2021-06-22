@@ -1,20 +1,13 @@
-import React, { useState, forwardRef } from "react";
-import {
-  Container,
-  Typography,
-  Grid,
-  Button,
-  Paper,
- 
-} from "@material-ui/core";
+import React, { useState} from "react";
+import { Container, Typography, Grid, Button, Paper } from "@material-ui/core";
 import makeStyles from "./Style";
 import CustomDatePicker from "./components/CustomDatePicker";
-import Table from "./components/Table"
+import Table from "./components/Table";
 import CreateForm from "./components/CreateForm";
-import EditForm from "./components/EditForm";
 const App = () => {
   const classes = makeStyles();
   const [year, setYear] = useState(new Date());
+  const [openCreateDialog, setOpenCreateDialog] = useState(false);
 
   return (
     <Container maxWidth="sm">
@@ -33,9 +26,17 @@ const App = () => {
           </Typography>
           <CustomDatePicker year={year} setYear={setYear} />
         </div>
-        <Button variant="contained" className={classes.buttonStyle}>
+        <Button
+          variant="contained"
+          className={classes.buttonStyle}
+          onClick={()=>{setOpenCreateDialog(true)}}
+        >
           Create New
         </Button>
+        <CreateForm
+          openCreateDialog={openCreateDialog}
+          setOpenCreateDialog={setOpenCreateDialog}
+        />
       </Grid>
       <div
         style={{
@@ -64,8 +65,7 @@ const App = () => {
           </Typography>
         </Grid>
       </div>
-      <Table/>
-    
+      <Table />
     </Container>
   );
 };

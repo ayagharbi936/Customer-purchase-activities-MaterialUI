@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { Typography, Grid, Paper, Button } from "@material-ui/core";
 import makeStyles from "../Style";
+import EditForm from "./EditForm";
 
 const TableItem = () => {
   const classes = makeStyles();
+  const [openEditDialog, setOpenEditDialog] = useState(false);
 
   return (
     <Grid item xs={12} sm={6}>
@@ -57,9 +59,11 @@ const TableItem = () => {
             </div>
           </Grid>
           <Grid container justify='flex-end'>
-          <Button size="small"  variant="contained"  className={classes.buttonStyle} style={{height:18,width:20}}>
+          <Button onClick={()=>{setOpenEditDialog(true)}} size="small"  variant="contained"  className={classes.buttonStyle} style={{height:18,width:20}}>
           Edit
-        </Button></Grid>
+        </Button>
+        <EditForm openEditDialog={openEditDialog} setOpenEditDialog={setOpenEditDialog} />
+        </Grid>
         </div>
         
       </Paper>

@@ -22,6 +22,7 @@ const CustomDatePicker = ({year, setYear}) => {
 
   return (
     <DatePicker
+    withPortal
       selected={year}
       onChange={(date) => console.log(date)}
       showYearPicker
