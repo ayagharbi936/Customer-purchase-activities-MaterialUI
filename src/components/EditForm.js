@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Typography, Button, Grid, Dialog} from "@material-ui/core";
+import React from "react";
+import { Typography, Button, Grid, Dialog } from "@material-ui/core";
 import makeStyles from "../Style";
 import ProgressLabels from "./ProgressLabels";
 
@@ -8,40 +8,94 @@ const EditForm = ({ openEditDialog, setOpenEditDialog }) => {
 
   return (
     <Dialog open={openEditDialog} onClose={() => setOpenEditDialog(false)}>
-      <Grid
-        container
-        direction="column"
-        style={{ padding: "20px", width: 350, overflow: "hidden" }}
-      >
+      <div style={{ width: 300, padding: "20px 0" }}>
         <Typography align="center" style={{ fontWeight: "500", fontSize: 14 }}>
           2021 June
         </Typography>
-        <Grid item style={{ alignSelf: "center", marginTop: 20 }}>
-          <Typography
-            style={{ fontWeight: "500", fontSize: 13, marginBottom: 5 }}
+        <div style={{ margin: "20px auto", width: "62%" }}>
+          <div>
+            <Typography
+              style={{ fontWeight: "500", fontSize: 13, marginBottom: 5 }}
+            >
+              progress
+            </Typography>
+            <Grid container justify="space-between" alignItems="center">
+              <ProgressLabels />
+              <ul style={{ listStyle: "none", margin: "0", padding: "0" }}>
+                <li>
+                  <input type="checkbox" />
+                </li>
+                <li>
+                  <input type="checkbox" />
+                </li>
+                <li>
+                  <input type="checkbox" />
+                </li>
+                <li>
+                  <input type="checkbox" />
+                </li>
+                <li>
+                  <input type="checkbox" />
+                </li>
+              </ul>
+            </Grid>
+          </div>
+          <div
+            style={{
+              margin: "20px 0",
+
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "1px solid #000",
+              padding: "10px",
+            }}
           >
-            progress
-          </Typography>
-          <Grid container justify="space-between" alignItems="center">
-            <ProgressLabels />
-            <ul style={{ listStyle: "none", margin: "0", padding: "0" }}>
-              <li>
-                <input type="checkbox" />
-              </li>
-              <li>
-                <input type="checkbox" />
-              </li>
-              <li>
-                <input type="checkbox" />
-              </li>
-              <li>
-                <input type="checkbox" />
-              </li>
-              <li>
-                <input type="checkbox" />
-              </li>
-            </ul>
-          </Grid>
+            <Typography className={classes.EditFormLabel}>
+              Payement method selection
+            </Typography>
+            <div style={{ margin: "10px 0", width: "100%" }}>
+              <ul style={{ listStyle: "none", margin: "0", padding: "0" }}>
+                <li
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Typography className={classes.EditFormLabel}>
+                    Cash
+                  </Typography>
+                  <input type="checkbox" />
+                </li>
+                <li
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Typography className={classes.EditFormLabel}>
+                    Credit
+                  </Typography>
+                  <input type="checkbox" />
+                </li>
+                <li
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Typography className={classes.EditFormLabel}>
+                    Contribution
+                  </Typography>
+                  <input type="checkbox" />
+                </li>
+              </ul>
+            </div>
+            <div style={{ margin: "5px 0" }}>
+              <Typography className={classes.EditFormLabel}>
+                Payement item
+              </Typography>
+              <input className={classes.input} />
+            </div>
+            <div style={{ margin: "5px 0" }}>
+              <Typography className={classes.EditFormLabel}>
+                Payement amount
+              </Typography>
+              <input className={classes.input} />
+            </div>
+          </div>
           <div style={{ margin: "10px 0" }}>
             <Typography className={classes.EditFormLabel}>
               Number of actions
@@ -73,27 +127,26 @@ const EditForm = ({ openEditDialog, setOpenEditDialog }) => {
               className={classes.input}
             />
           </div>
+        </div>
+
+        <Grid container justify="space-around" alignItems="center">
+          <Button
+            size="small"
+            variant="contained"
+            className={classes.buttonStyle}
+            style={{ backgroundColor: "#E79595" }}
+          >
+            Cancel
+          </Button>
+          <Button
+            size="small"
+            variant="contained"
+            className={classes.buttonStyle}
+          >
+            Update
+          </Button>
         </Grid>
-        <Grid item>
-          <Grid container justify="space-between" alignItems="center">
-            <Button
-              size="small"
-              variant="contained"
-              className={classes.buttonStyle}
-              style={{ backgroundColor: "#E79595" }}
-            >
-              Cancel
-            </Button>
-            <Button
-              size="small"
-              variant="contained"
-              className={classes.buttonStyle}
-            >
-              Update
-            </Button>
-          </Grid>
-        </Grid>
-      </Grid>
+      </div>
     </Dialog>
   );
 };

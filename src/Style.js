@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   EditFormLabel: {
     fontWeight: 500,
-    fontSize: 13,
+    fontSize: 12,
     marginBottom: 5,
   },
   input: {
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     border: "1px solid #ccc",
     outline: 0,
+    width:'100%'
   },
 }));
 
