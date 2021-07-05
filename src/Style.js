@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   tableItemLabel: {
     fontSize: 11,
     fontWeight: 500,
-    marginBottom: 10,
+    
   },
   EditFormLabel: {
     fontWeight: 500,
@@ -34,7 +34,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     border: "1px solid #ccc",
     outline: 0,
-    width:'100%'
+    width: "100%",
+  },
+  listStyle: {
+    listStyle: "none",
+    margin: "0",
+    padding: "0",
   },
 }));
 

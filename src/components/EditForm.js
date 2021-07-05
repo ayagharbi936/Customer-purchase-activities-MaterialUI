@@ -21,7 +21,7 @@ const EditForm = ({ openEditDialog, setOpenEditDialog }) => {
             </Typography>
             <Grid container justify="space-between" alignItems="center">
               <ProgressLabels />
-              <ul style={{ listStyle: "none", margin: "0", padding: "0" }}>
+              <ul className={classes.listStyle}>
                 <li>
                   <input type="checkbox" />
                 </li>
@@ -49,14 +49,14 @@ const EditForm = ({ openEditDialog, setOpenEditDialog }) => {
               alignItems: "center",
               justifyContent: "center",
               border: "1px solid #000",
-              padding: "10px",
+              padding: "15px",
             }}
           >
             <Typography className={classes.EditFormLabel}>
               Payement method selection
             </Typography>
             <div style={{ margin: "10px 0", width: "100%" }}>
-              <ul style={{ listStyle: "none", margin: "0", padding: "0" }}>
+              <ul className={classes.listStyle}>
                 <li
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
@@ -96,6 +96,23 @@ const EditForm = ({ openEditDialog, setOpenEditDialog }) => {
               <input className={classes.input} />
             </div>
           </div>
+
+          <Button
+            size="small"
+            variant="contained"
+            className={classes.buttonStyle}
+            style={{
+              height: 30,
+              maxWidth: 30,
+              minWidth:30,
+              borderRadius: 15,
+              display:'block',
+              marginLeft:'auto',
+            }}
+          >
+            +
+          </Button>
+
           <div style={{ margin: "10px 0" }}>
             <Typography className={classes.EditFormLabel}>
               Number of actions

@@ -1,14 +1,16 @@
 import React from "react";
 import { Typography, Box } from "@material-ui/core";
+import makeStyles from "../Style";
+
 const ProgressLabels = () => {
+  const classes = makeStyles();
+
   return (
     <ul
       style={{
         width: 150,
-        listStyle: "none",
-        margin: "0",
-        padding: "0",
       }}
+      className={classes.listStyle}
     >
       <li>
         <Box style={{ backgroundColor: "#63C5CF", padding: "2px 5px" }}>
