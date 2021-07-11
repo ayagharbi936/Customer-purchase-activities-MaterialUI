@@ -102,10 +102,10 @@ const EditForm = ({ openEditDialog, setOpenEditDialog }) => {
             variant="contained"
             className={classes.buttonStyle}
             style={{
-              height: 30,
-              maxWidth: 30,
-              minWidth:30,
-              borderRadius: 15,
+              height: 36,
+              maxWidth: 36,
+              minWidth:36,
+              borderRadius: 18,
               display:'block',
               marginLeft:'auto',
             }}
